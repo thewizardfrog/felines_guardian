@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Urbanist');
+/* Start: Donate Button */
+#donate-button {
+    
+    position: absolute;
+    
+    bottom: 0px;
+    right: 0px;
+
+    margin: 0 2.5% 0 2%;
+   
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 20px;
+  
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  
+    color: #FEF3A0;
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 2rem;
+    font-weight: bold;
+
+    /* Gradient Background */
+    background-image: linear-gradient(to right, rgb(0, 115, 103), rgb(0, 71, 115), rgb(0, 71, 115), rgb(0, 115, 103));
+    background-size: 300% 100%;
+
+    &:hover {
+        background-position: 100% 0;
+
+        -webkit-transition: all .4s ease-in-out;
+        -moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  box-shadow: inset 0 0 0;
+}
+
+button.cta-button {
+    color: rgb(41, 41, 41);
+    background-color: rgb(205, 205, 205);
+    border-radius: 20px;
+    border: 2px solid rgb(205, 205, 205);
+    transition: 0.25s;
+    line-height: 1;
+
+    font-family: 'Urbanist', 'Times New Roman', sans-serif;      
+    font-size: 16px;
+ 
+    padding: 2% 5%;
+    
+    &:hover,
+    &:focus { 
+        color: rgb(41, 41, 41);
+        background-color: rgb(255, 255, 255);
+        border-color: rgb(255, 255, 255);
+    }
+    
+    &.dark {
+        &:hover,
+        &:focus { 
+        color: rgb(255, 255, 255);
+        background-color: rgb(41, 41, 41);
+        border-color: rgb(41, 41, 41);
+        }
+    }
+}

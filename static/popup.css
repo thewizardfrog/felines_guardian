@@ -1,0 +1,152 @@
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10000;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+
+.settings-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10000;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+
+.popup .donate-amount {
+    list-style-type: none;
+    margin: 25px 0 0 0;
+    padding: 0;
+}
+
+.popup .donate-amount li {
+        float: left;
+        margin: 0 0 20px 10px;
+        width: 100px;
+        height: 40px;
+        position: relative;
+        
+        &:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgb(24, 100, 163);
+        }
+        &:last-child {
+            width: 150px;
+        }
+}
+
+.popup .donate-amount label, 
+.popup .donate-amount input {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        cursor: pointer;
+}
+
+
+.popup .donate-amount input[type="radio"] {
+    opacity: 0;
+    z-index: 100;
+
+    &:checked+label {
+        color: rgb(255, 255, 255);
+        background-color: rgb(41, 67, 133);
+    }
+}
+
+
+.popup .donate-amount label {
+    padding: 10px;
+    border: 1px solid #CCC;
+    z-index: 90;
+}
+
+.register-subsection {
+    label, input {
+        display: block;
+    }
+    
+}
+
+.donate-option {
+    padding: 15px 10px;
+
+    input[type="radio"] {
+        opacity: 0;
+        position: fixed;
+    
+        &:checked + label {
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 115, 103);
+        }
+    }
+
+    label {
+        display: inline-block; 
+        background-color: #ddd;
+        padding: 10px 20px;
+        border-radius: 4px;
+
+        &:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgb(76, 157, 148);
+        }
+    }
+}
+
+.right-align {
+    position: relative;
+    left: 262px;
+}
+
+.popup.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    
+    border-bottom: 1px solid #292929;
+    font-weight: bold;
+}
+
+.popup-header button {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
