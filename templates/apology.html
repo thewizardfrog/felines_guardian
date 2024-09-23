@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Feline's Guardian | Error
+{% endblock %}
+
+{% block body %}
+  <section id="apology" class="centered">
+    <img src="/static/media/apology.png">
+    <h2 class="header">Sorry!</h2>
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+    {% if lists %}
+    <ul>
+        You did not provide a valid value for:
+        {% for list in lists %}
+            
+            {% if list %}
+                <li>{{ list }}</li>
+            {% endif %}
+            
+        {% endfor %}
+    </ul>
+    {% endif %}
+  </section>
+{% endblock %}

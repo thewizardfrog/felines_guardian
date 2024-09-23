@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Feline's Guardian | Login
+{% endblock %}
+
+{% block body %}
+  <section id="login_inquiry">
+      <h2 class="header">Track your Inquiry</h2>
+      <form action="/login_inquiry" method="POST">
+        <div class="form centered">
+          <input class="input" type="text" name="first_name" placeholder="First Name" required>
+          <input class="input" type="text" name="last_name" placeholder="Last Name" required>
+          <input class="input" type="text" name="telephone" placeholder="Telephone" required><br>
+          <input class="input" type="submit" name="myButton">
+        </div>
+      </form>
+  </section>
+{% endblock %}

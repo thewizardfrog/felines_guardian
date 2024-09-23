@@ -1,0 +1,41 @@
+{% extends "admin_layout.html" %}
+
+{% block title %}
+    Feline's Guardian | Admin Homepage
+{% endblock %}
+
+{% block body %}
+    <section>
+        <h2 class="header header-padding">Last Work</h2>
+    </section>
+
+    <section>
+        <h2 class="header header-padding">New Assignment</h2>
+        {% for user in users %}
+        <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <h5 class="card-header">{{ user.id }}</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ user.issue }}</h5>
+                        
+                        <p class="card-text">{{ user.information }}</p>
+        
+                        <p class="card-text">
+                            <i class="fa-solid fa-user"></i><span class="card-user"> {{ user.first_name }} {{ user.last_name }} <br></span>
+                            <i class="fa-solid fa-envelope"></i><span class="card-email"> {{ user.email }} <br></span>
+                            <i class="fa-solid fa-phone"></i><span class="card-phone"> {{ user.telephone }} <br></span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        {% endfor %}
+        
+        <p>{{ new_inquiry }} {{ length }} {{ amount }} </p>
+    </section>
+
+    <section>
+        <h2 class="header header-padding">Personal Note</h2>
+    </section>
+{% endblock %}

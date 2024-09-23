@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Feline's Guardian | Submit an Inquiry
+{% endblock %}
+
+{% block body %}
+  <section id="inquiry">
+    <h2 class="header header-padding">
+      Your Inquiry: <span class="details">{{ inquiry }}</span><br>
+      ID: <span class="details">{{ id }}</span>
+    </h2>
+    <form action="/inquiry" method="POST">
+      <div class="form centered">
+        <input class="input" type="text" name="first_name" placeholder="First Name" required>
+        <input class="input" type="text" name="last_name" placeholder="Last Name" required><br>
+        <input class="input" type="text" name="email" placeholder="Email" required>
+        <input class="input" type="text" name="info" placeholder="Additional Information" required><br>
+        <p class="input"><i class="fa-solid fa-phone"></i> {{ telephone }}</p>
+        <input class="input" type="submit" name="myButton">
+      </div>
+    </form>
+  </section>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Feline's Guardian | Donation
+{% endblock %}
+
+{% block body %}
+  <section class="centered">
+    <h2 class="header">Donation Form</h2>
+    <h3 class="details smaller">{{ amount }} / {{ option }}</h3>
+    <form action="/donation" method="POST">
+      <div class="form">
+          <input class="input" type="text" name="first_name" placeholder="First Name" required>
+          <input class="input" type="text" name="last_name" placeholder="Last Name" required><br>
+          <input class="input" type="text" name="email" placeholder="Email" required>
+          <input class="input" type="text" name="telephone" placeholder="Telephone" required><br>
+          <input class="input" type="submit" name="myButton">
+      </div>
+    </form>
+  </section>
+  
+{% endblock %}

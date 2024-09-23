@@ -1,0 +1,63 @@
+{% extends "admin_layout.html" %}
+
+{% block title %}
+    Feline's Guardian | Inquiry Management
+{% endblock %}
+
+{% block body %}
+    
+    <div class="Urbanist">
+        <div class="grid-container grid-search">
+            <div class="search-box">
+                <input type="search" data-search placeholder="Search">
+            </div>
+            
+            <div class="setting-tab dropdown">
+                <i class="fa-solid fa-gear" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                        <form action="/new_progression" method="POST">
+                            <input type="text" name="new_progression" required minlength="10" placeholder="New Progression"> 
+                            <input type="submit">
+                        </form>
+                    </li>
+                    {% for option in options %}
+                        <a href="/to_be_edited_progression?s-option={{ option.option }}" method="POST"><li class="dropdown-item to-be-edited-progression">{{ option.option }}</li></a>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% for user in users %}
+            <div class="grid-container grid-box">
+                <div class="card">
+                    <h5 class="card-header">{{ user.id }}<a href="/delete_inquiry?sid={{ user.id }}"><i class="fa-solid fa-circle-xmark delete-button"></i></a></h5>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ user.issue }}</h5>
+                        
+                        <p class="card-text">{{ user.information }}</p>
+        
+                        <p class="card-text">
+                            <i class="fa-solid fa-user"></i><span class="card-user"> {{ user.first_name }} {{ user.last_name }} <br></span>
+                            <i class="fa-solid fa-envelope"></i><span class="card-email"> {{ user.email }} <br></span>
+                            <i class="fa-solid fa-phone"></i><span class="card-phone"> {{ user.telephone }} <br></span>
+                        </p>
+
+                        <div class="flex-container">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{ user.progression }}</button>
+                                <ul class="dropdown-menu">
+                                    {% for option in options %}
+                                        <li class="dropdown-item">{{ option.option }}
+                                            <a href="/update_progression?sid={{ user.id }}&s-option={{ option.option }}" method="POST"><button class="round-button">Save</button></a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
